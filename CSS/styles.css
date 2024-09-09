@@ -1,3 +1,12 @@
+:root{
+    --banco: #ffffff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: hsl(186, 100%, 33%);
+    --gris: #757575;
+}
+
+
 /*Truco para uniformidad de texto entre navegadores*/
 html{
     font-size: 62.5%;
@@ -17,3 +26,34 @@ body{
     font-size: 2rem;
 }
 
+.navegacion-principal{
+    background-color: var(--secundario);
+    /*Margin es por fuera y padding es por dentro*/
+    display: flex; /* Flexbox esta diseñado para para alinear elementos en tus diseños*/
+    /*justify-content para FILAS  /  aling-items es para COLUMNAS (flex.direction)*/
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+/*Al poner el curzor al hipervinculo*/
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+.navegacion-principal a{
+    color: var(--banco);
+    text-decoration: none; /* Remeuve el estilo subeayado del texto */
+    padding: 1rem;
+}
+
+.contenedor{
+    width: 120rem; /* 1200 pixeles porque 1 rem=10px */
+    /*margin-top: 0;*/
+    margin: 0 auto;
+}
+
+.nav.bg{
+    background-color: var(--secundario);
+}
