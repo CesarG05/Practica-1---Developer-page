@@ -1,11 +1,10 @@
 :root{
-    --banco: #ffffff;
+    --blanco: #ffffff;
     --oscuro: #212121;
     --primario: #ffc107;
     --secundario: hsl(186, 100%, 33%);
     --gris: #757575;
 }
-
 
 /*Truco para uniformidad de texto entre navegadores*/
 html{
@@ -16,7 +15,28 @@ body{
     font-size: 16px;
 }
 
-/*El punto es para hacer refrecia a la clase*/
+/*Se aplica desde 0 px*/
+body{
+    background-color: bisque;
+}
+
+/*Recomendado
+480 px para moviles 
+768 px para tables*/
+
+@media(min-width: 480px){
+    body{
+        background-color: blue;
+    }
+}
+
+@media(min-width: 768px){
+    body{
+        background-color: cornflowerblue;
+    }
+}
+
+/*El punto es para hacer referencia a la clase*/
 .title{
     text-align: center;
     font-size: 3.8rem;
@@ -34,6 +54,15 @@ body{
     justify-content: space-between;
     font-weight: bold;
     font-size: 2rem;
+    flex-direction: column;
+    align-items: center;
+} 
+
+@media (min-width: 768px){
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 /*Al poner el curzor al hipervinculo*/
@@ -43,8 +72,8 @@ body{
 }
 
 .navegacion-principal a{
-    color: var(--banco);
-    text-decoration: none; /* Remeuve el estilo subeayado del texto */
+    color: var(--blanco);
+    text-decoration: none; /* Remueve el estilo subrayado del texto */
     padding: 1rem;
 }
 
@@ -54,6 +83,13 @@ body{
     margin: 0 auto;
 }
 
-.nav.bg{
+.nav-bg{
     background-color: var(--secundario);
+}
+
+.hero{
+    background-image: url(../img/hero.jpg); /* ../ es para regresar un nivel de directorio
+    ya que la carpeta "img" esta afuera de "CSS" */
+    background-repeat: no-repeat; /*Sirve para evitar la repeticion de la imagen cuendo es pequeño*/
+    background-size: cover; /*Sirve para cubrir la imagen con todo el tamaño*/
 }
