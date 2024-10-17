@@ -1,53 +1,45 @@
-:root{
+:root {
     --blanco: #ffffff;
     --oscuro: #212121;
     --primario: #ffc107;
     --secundario: hsl(186, 100%, 33%);
     --gris: #757575;
+    --grisClaro: #b6b6b6;
 }
 
 /*Truco para uniformidad de texto entre navegadores*/
-html{
+html {
     font-size: 62.5%;
 }
 
-body{
+body {
     font-size: 16px;
+    font-family: 'Krub', sans-serif;
+    background: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
 }
 
-/*Se aplica desde 0 px*/
-body{
-    background-color: bisque;
-}
-
-/*Recomendado
-480 px para moviles 
-768 px para tables*/
-
-@media(min-width: 480px){
-    body{
-        background-color: blue;
-    }
-}
-
-@media(min-width: 768px){
-    body{
-        background-color: cornflowerblue;
-    }
-}
-
-/*El punto es para hacer referencia a la clase*/
-.title{
-    text-align: center;
+/*Tipografia*/
+h1 {
     font-size: 3.8rem;
 }
 
-.title span{
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1,h2,h3 {
+    text-align: center;
+}
+
+.title span {
     font-size: 2rem;
 }
 
-.navegacion-principal{
-    background-color: var(--secundario);
+.navegacion-principal {
     /*Margin es por fuera y padding es por dentro*/
     display: flex; /* Flexbox esta diseñado para para alinear elementos en tus diseños*/
     /*justify-content para FILAS  /  aling-items es para COLUMNAS (flex.direction)*/
@@ -58,38 +50,92 @@ body{
     align-items: center;
 } 
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
     .navegacion-principal{
         flex-direction: row;
-        justify-content: space-between;
     }
 }
 
 /*Al poner el curzor al hipervinculo*/
-.navegacion-principal a:hover{
+.navegacion-principal a:hover {
     background-color: var(--primario);
     color: var(--oscuro);
 }
 
-.navegacion-principal a{
+.navegacion-principal a {
     color: var(--blanco);
     text-decoration: none; /* Remueve el estilo subrayado del texto */
     padding: 1rem;
 }
 
-.contenedor{
-    width: 120rem; /* 1200 pixeles porque 1 rem=10px */
+.contenedor {
+    max-width: 120rem; /* 1200 pixeles porque 1 rem=10px */
     /*margin-top: 0;*/
     margin: 0 auto;
 }
 
-.nav-bg{
+.nav-bg {
     background-color: var(--secundario);
 }
 
-.hero{
+.hero {
     background-image: url(../img/hero.jpg); /* ../ es para regresar un nivel de directorio
     ya que la carpeta "img" esta afuera de "CSS" */
     background-repeat: no-repeat; /*Sirve para evitar la repeticion de la imagen cuendo es pequeño*/
     background-size: cover; /*Sirve para cubrir la imagen con todo el tamaño*/
+    height: 450px; /*Alto del elemento hero */
+    position: relative; /*Para manipular la posision. El padre simpre debe ser relative*/
 }
+
+.contenido-hero {
+    position: absolute; /*Para manipular la posision. El hijo siempre debe ser absolute*/
+    background-color: rgba(0, 0, 0, .7);
+    width: 100%;
+    height: 100%;
+    /*Alinear vertical y horizontalmente*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero p,
+.contenido-hero h2 {
+    color: var(--blanco)
+}
+
+.boton {
+    display: inline-block;
+    padding: 1rem 2rem;
+    margin-top: 3rem;
+    background-color: var(--secundario); 
+    color: var(--blanco); 
+    font-size: 1.8rem;
+    font-weight: bold;  
+    text-decoration: none; 
+    text-transform: uppercase; /*Covertir texto en mayusaculas*/
+    border-radius: 0.5rem; /*Para hacer los bordes redondeados*/
+    width: 90%;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;  /* Animaciones para el hover */
+}
+
+.boton:hover {
+    background-color: var(--primario); /* Color al pasar el cursor (hover) */
+    transform: translateY(-3px); /* Pequeño movimiento al hover */
+} 
+
+@media (min-width: 768px) {
+    .boton {
+        width: auto;
+    }
+}
+
+.ubicacion {
+    display: flex;
+    align-items: flex-end; 
+    padding: 1.5rem;
+}
+
+
+
